@@ -1,7 +1,7 @@
 
-cartao = input().strip()digitos = 
+cartao = input().strip()
 
-[int(c) for c in cartao]
+digitos = [int(c) for c in cartao]
 
 soma_impares = sum(digitos[-1::-2])
 
@@ -9,8 +9,10 @@ soma_pares = 0
 for d in digitos[-2::-2]:
     dobro = d * 2
     if dobro >= 10:
-        dobro = (dobro // 10) + (dobro % 10)  # soma dos dígitos
+        dobro = (dobro // 10) + (dobro % 10)  # soma dos dígitos do resultado
     soma_pares += dobro
+
+total = soma_impares + soma_pares
 
 if total % 10 == 0:
     print("Cartão válido")
