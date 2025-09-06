@@ -1,8 +1,18 @@
-# Leia uma linha com o número do cartão
-numero = input()
 
-# TODO: implemente a verificação pelo algoritmo de Luhn
-# Siga as dicas do README.
+cartao = input().strip()digitos = 
 
-# Ao final, imprima exatamente:
-# print("Cartão válido")  ou  print("Cartão inválido")
+[int(c) for c in cartao]
+
+soma_impares = sum(digitos[-1::-2])
+
+soma_pares = 0
+for d in digitos[-2::-2]:
+    dobro = d * 2
+    if dobro >= 10:
+        dobro = (dobro // 10) + (dobro % 10)  # soma dos dígitos
+    soma_pares += dobro
+
+if total % 10 == 0:
+    print("Cartão válido")
+else:
+    print("Cartão inválido")
